@@ -25,6 +25,7 @@
         <module name="Amazon" />
         <module name="Cnn" />
         <module name="Ebay" />
+        <module name="Facebook" />
         <module name="Generic" />
       </profile>
     </annotationProcessing>
@@ -32,6 +33,7 @@
       <module name="Amazon" target="1.5" />
       <module name="Cnn" target="1.5" />
       <module name="Ebay" target="1.5" />
+      <module name="Facebook" target="1.5" />
       <module name="Generic" target="1.5" />
       <module name="SpaceAutomationFramework" target="1.5" />
     </bytecodeTargetLevel>
