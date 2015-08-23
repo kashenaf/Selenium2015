@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Amazon App ri=unning on Firefox Browser" duration-ms="13086" started-at="2015-08-23T14:40:46Z" finished-at="2015-08-23T14:40:59Z">
+    <groups>
+    </groups>
+    <test name="Home Page" duration-ms="13086" started-at="2015-08-23T14:40:46Z" finished-at="2015-08-23T14:40:59Z">
+      <class name="amazon.Retail">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:amazon.Retail@3796751b]" name="setUp" is-config="true" duration-ms="11434" started-at="2015-08-23T10:40:46Z" finished-at="2015-08-23T10:40:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="home()[pri:0, instance:amazon.Retail@3796751b]" name="home" duration-ms="838" started-at="2015-08-23T10:40:57Z" finished-at="2015-08-23T10:40:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- home -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:amazon.Retail@3796751b]" name="cleanUp" is-config="true" duration-ms="795" started-at="2015-08-23T10:40:58Z" finished-at="2015-08-23T10:40:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- amazon.Retail -->
+    </test> <!-- Home Page -->
+  </suite> <!-- Amazon App ri=unning on Firefox Browser -->
+</testng-results>
