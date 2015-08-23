@@ -3,6 +3,7 @@
 <suite name="Amazon App ri=unning on Firefox Browser">
 
 <parameter name="url" value="http://www.amazon.com"/>
+    <parameter name="browser" value="ie"/>
 
 <test name="Home Page">
     <classes>

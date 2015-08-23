@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,11 +25,11 @@ public class Base {
 
     public WebDriver driver = null;
 
-    @Parameters({"url"})
+    @Parameters({"url","browser"})
     @BeforeMethod
-    public void setUp(String url){
+    public void setUp(String url, String browser){
 
-        driver = new FirefoxDriver();
+        driver = getDriver(browser);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.navigate().to(url);
         driver.manage().window().maximize();
@@ -36,6 +40,27 @@ public class Base {
     public void cleanUp(){
         driver.quit();
     }
+    //get local driver
+    public WebDriver getDriver(String browser){
+        WebDriver driver = null;
+        if(browser.equalsIgnoreCase("firefox")){
+            driver = new FirefoxDriver();
+        }else if(browser.equalsIgnoreCase("chrome")){
+            System.setProperty("webdriver.chrome.driver","Generic\\selenium-browser-driver\\chromedriver.exe");
+            driver = new ChromeDriver();
+        }else if(browser.equalsIgnoreCase("safari")){
+            driver = new SafariDriver();
+        }else if(browser.equalsIgnoreCase("ie")){
+            System.setProperty("webdriver.ie.driver","Generic\\selenium-browser-driver\\IEDriverServer.exe");
+            driver = new InternetExplorerDriver();
+        }else if(browser.equalsIgnoreCase("htmlunit")){
+            driver = new HtmlUnitDriver();
+        }
+
+        return driver;
+    }
+
+    //get cloud driver
 
     public void clickByCss(String locator){
         driver.findElement(By.cssSelector(locator)).click();
@@ -44,7 +69,7 @@ public class Base {
         driver.findElement(By.xpath(locator)).click();
     }
     public void typeByCss(String locator, String value){
-        driver.findElement(By.cssSelector(locator)).sendKeys(value,Keys.CLEAR);
+        driver.findElement(By.cssSelector(locator)).sendKeys(value, Keys.CLEAR);
     }
     public void typeByCssThenEnter(String locator, String value){
         driver.findElement(By.cssSelector(locator)).sendKeys(Keys.CLEAR, value, Keys.ENTER);
@@ -118,7 +143,7 @@ public class Base {
         List<WebElement> elements = driver.findElements(By.cssSelector(locator));
         return elements;
     }
-
+     //get texts
     public List<String> getElementTexts(String  locator){
         List<String> texts = new ArrayList<String>();
         List<WebElement> element = new ArrayList<WebElement>();
@@ -131,7 +156,7 @@ public class Base {
 
     //Keys
     public void clearInputBox(String locator){
-        driver.findElement(By.cssSelector(locator)).sendKeys(Keys.DELETE);
+        driver.findElement(By.cssSelector(locator)).clear();
     }
 
 

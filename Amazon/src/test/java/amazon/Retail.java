@@ -19,9 +19,9 @@ public class Retail extends DropDownSearchList {
         for(int i=0; i<searchItems.size(); i++) {
 
             typeByCssThenEnter("#twotabsearchtextbox", searchItems.get(i));
-            sleepFor(2);
+            sleepFor(1);
             clearInputBox("#twotabsearchtextbox");
-            sleepFor(2);
+            sleepFor(1);
         }
     }
 }
