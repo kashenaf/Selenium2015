@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="CNN App running on Firefox Browser" duration-ms="20507" started-at="2015-08-23T14:40:24Z" finished-at="2015-08-23T14:40:45Z">
+  <suite name="CNN App running on Firefox Browser" duration-ms="18975" started-at="2015-08-23T16:05:58Z" finished-at="2015-08-23T16:06:17Z">
     <groups>
     </groups>
-    <test name="Home Page" duration-ms="20507" started-at="2015-08-23T14:40:24Z" finished-at="2015-08-23T14:40:45Z">
+    <test name="Home Page" duration-ms="18975" started-at="2015-08-23T16:05:58Z" finished-at="2015-08-23T16:06:17Z">
       <class name="home.HomePage">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:home.HomePage@3796751b]" name="setUp" is-config="true" duration-ms="17405" started-at="2015-08-23T10:40:24Z" finished-at="2015-08-23T10:40:42Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:home.HomePage@566776ad]" name="setUp" is-config="true" duration-ms="16852" started-at="2015-08-23T12:05:58Z" finished-at="2015-08-23T12:06:15Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="navigateTabs()[pri:0, instance:home.HomePage@3796751b]" name="navigateTabs" duration-ms="950" started-at="2015-08-23T10:40:42Z" finished-at="2015-08-23T10:40:43Z">
+        <test-method status="PASS" signature="navigateTabs()[pri:0, instance:home.HomePage@566776ad]" name="navigateTabs" duration-ms="895" started-at="2015-08-23T12:06:15Z" finished-at="2015-08-23T12:06:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateTabs -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:home.HomePage@3796751b]" name="cleanUp" is-config="true" duration-ms="2135" started-at="2015-08-23T10:40:43Z" finished-at="2015-08-23T10:40:45Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:home.HomePage@566776ad]" name="cleanUp" is-config="true" duration-ms="1205" started-at="2015-08-23T12:06:16Z" finished-at="2015-08-23T12:06:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->

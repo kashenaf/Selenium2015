@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Amazon App ri=unning on Firefox Browser" duration-ms="13086" started-at="2015-08-23T14:40:46Z" finished-at="2015-08-23T14:40:59Z">
+  <suite name="Amazon App ri=unning on Firefox Browser" duration-ms="20939" started-at="2015-08-23T16:26:11Z" finished-at="2015-08-23T16:26:32Z">
     <groups>
     </groups>
-    <test name="Home Page" duration-ms="13086" started-at="2015-08-23T14:40:46Z" finished-at="2015-08-23T14:40:59Z">
+    <test name="Home Page" duration-ms="20939" started-at="2015-08-23T16:26:11Z" finished-at="2015-08-23T16:26:32Z">
       <class name="amazon.Retail">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:amazon.Retail@3796751b]" name="setUp" is-config="true" duration-ms="11434" started-at="2015-08-23T10:40:46Z" finished-at="2015-08-23T10:40:57Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:amazon.Retail@3d8c7aca]" name="setUp" is-config="true" duration-ms="11114" started-at="2015-08-23T12:26:11Z" finished-at="2015-08-23T12:26:22Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="home()[pri:0, instance:amazon.Retail@3796751b]" name="home" duration-ms="838" started-at="2015-08-23T10:40:57Z" finished-at="2015-08-23T10:40:58Z">
+        <test-method status="PASS" signature="home()[pri:0, instance:amazon.Retail@3d8c7aca]" name="home" duration-ms="8995" started-at="2015-08-23T12:26:22Z" finished-at="2015-08-23T12:26:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- home -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:amazon.Retail@3796751b]" name="cleanUp" is-config="true" duration-ms="795" started-at="2015-08-23T10:40:58Z" finished-at="2015-08-23T10:40:59Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:amazon.Retail@3d8c7aca]" name="cleanUp" is-config="true" duration-ms="814" started-at="2015-08-23T12:26:31Z" finished-at="2015-08-23T12:26:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
