@@ -25,11 +25,11 @@ public class Base {
 
     public WebDriver driver = null;
 
-    @Parameters({"url","browser"})
+    @Parameters({"url","browser","os"})
     @BeforeMethod
-    public void setUp(String url, String browser){
+    public void setUp(String url, String browser, String os){
 
-        driver = getDriver(browser);
+        driver = getDriver(os, browser);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.navigate().to(url);
         driver.manage().window().maximize();
@@ -41,12 +41,16 @@ public class Base {
         driver.quit();
     }
     //get local driver
-    public WebDriver getDriver(String browser){
+    public WebDriver getDriver(String os, String browser){
         WebDriver driver = null;
         if(browser.equalsIgnoreCase("firefox")){
             driver = new FirefoxDriver();
         }else if(browser.equalsIgnoreCase("chrome")){
-            System.setProperty("webdriver.chrome.driver","Generic\\selenium-browser-driver\\chromedriver.exe");
+            if(os.equalsIgnoreCase("windows")){
+                System.setProperty("webdriver.chrome.driver","Generic\\selenium-browser-driver\\chromedriver.exe");
+            }else{
+                System.setProperty("webdriver.chrome.driver", "Generic/selenium-browser-driver/chromedriver");
+            }
             driver = new ChromeDriver();
         }else if(browser.equalsIgnoreCase("safari")){
             driver = new SafariDriver();
