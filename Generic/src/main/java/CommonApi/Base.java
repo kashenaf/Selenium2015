@@ -47,12 +47,13 @@ public class Base {
     }
 
     @AfterMethod
-    public void cleanUp(){
+    public void cleanUp()throws InterruptedException{
+        sleepFor(2);
         driver.quit();
     }
     //get local driver
     public WebDriver getLocalDriver(String os, String browserName){
-        WebDriver driver = null;
+
         if(browserName.equalsIgnoreCase("firefox")){
             driver = new FirefoxDriver();
         }else if(browserName.equalsIgnoreCase("chrome")){
