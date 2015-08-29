@@ -1,21 +1,23 @@
 package CommonApi;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -187,9 +189,35 @@ public class Base {
         driver.findElement(By.cssSelector(locator)).clear();
     }
 
+    public void mouseHover(String locator){
+        WebElement element = driver.findElement(By.cssSelector(locator));
+        Actions action = new Actions(driver);
+        Actions hover = action.moveToElement(element);
+    }
+    //handling Alert
+    public void okAlert(){
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+    }
+    public void cancelAlert(){
+        Alert alert = driver.switchTo().alert();
+        alert.dismiss();
+    }
 
+    //iFrame Handle
+    public void iframeHandle(WebElement element){
+        driver.switchTo().frame(element);
+    }
 
+    //get Links
+    public void getLinks(String locator){
+        driver.findElement(By.linkText(locator)).findElement(By.tagName("a")).getText();
+    }
 
-
+    //Taking Screen shots
+    public void takeScreenShot()throws IOException{
+        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file,new File("screenShots.png"));
+    }
 
 }
