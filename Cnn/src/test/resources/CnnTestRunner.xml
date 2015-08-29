@@ -3,10 +3,13 @@
 <suite name="CNN App running on Firefox Browser">
 
 <parameter name="url" value="http://www.cnn.com"/>
+    <parameter name="os" value="windows"/>
+    <parameter name="browser" value="firefox"/>
 
 <test name="Home Page">
     <classes>
-        <class name="home.HomePage"/>
+        <!--<class name="home.HomePage"/>-->
+        <class name = "TechNewsContent"/>
     </classes>
 
 </test>
