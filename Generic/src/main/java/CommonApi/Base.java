@@ -8,12 +8,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -25,13 +29,19 @@ public class Base {
 
     public WebDriver driver = null;
 
-    @Parameters({"url","browser","os"})
+    @Parameters({"useSauceLab","userName", "key","appUrl","os","browserName","browserVersion"})
     @BeforeMethod
-    public void setUp(String url, String browser, String os){
+    public void setUp(boolean useSauceLab,String userName,String key,String appUrl, String os,
+                      String browserName,String browserVersion )throws IOException{
 
-        driver = getDriver(os, browser);
+        if(useSauceLab == true){
+            getSauceLabDriver(userName, key, os, browserName, browserVersion);
+        }else{
+            getLocalDriver(os, browserName);
+        }
+
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.navigate().to(url);
+        driver.navigate().to(appUrl);
         driver.manage().window().maximize();
 
     }
@@ -41,23 +51,23 @@ public class Base {
         driver.quit();
     }
     //get local driver
-    public WebDriver getDriver(String os, String browser){
+    public WebDriver getLocalDriver(String os, String browserName){
         WebDriver driver = null;
-        if(browser.equalsIgnoreCase("firefox")){
+        if(browserName.equalsIgnoreCase("firefox")){
             driver = new FirefoxDriver();
-        }else if(browser.equalsIgnoreCase("chrome")){
+        }else if(browserName.equalsIgnoreCase("chrome")){
             if(os.equalsIgnoreCase("windows")){
                 System.setProperty("webdriver.chrome.driver","Generic\\selenium-browser-driver\\chromedriver.exe");
             }else{
                 System.setProperty("webdriver.chrome.driver", "Generic/selenium-browser-driver/chromedriver");
             }
             driver = new ChromeDriver();
-        }else if(browser.equalsIgnoreCase("safari")){
+        }else if(browserName.equalsIgnoreCase("safari")){
             driver = new SafariDriver();
-        }else if(browser.equalsIgnoreCase("ie")){
+        }else if(browserName.equalsIgnoreCase("ie")){
             System.setProperty("webdriver.ie.driver","Generic\\selenium-browser-driver\\IEDriverServer.exe");
             driver = new InternetExplorerDriver();
-        }else if(browser.equalsIgnoreCase("htmlunit")){
+        }else if(browserName.equalsIgnoreCase("htmlunit")){
             driver = new HtmlUnitDriver();
         }
 
@@ -65,6 +75,19 @@ public class Base {
     }
 
     //get cloud driver
+    public WebDriver getSauceLabDriver(String userName, String key, String os, String browserName,
+                                       String browserVersion )throws IOException{
+
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability("platform", os);
+        cap.setBrowserName(browserName);
+        cap.setCapability("version", browserVersion);
+
+        driver = new RemoteWebDriver(new URL("http://"+ userName + ":" +  key +
+                "@ondemand.saucelabs.com:80/wd/hub"), cap);
+
+        return driver;
+    }
 
     public void clickByCss(String locator){
         driver.findElement(By.cssSelector(locator)).click();
