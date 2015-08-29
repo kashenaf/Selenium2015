@@ -12,12 +12,11 @@
 
 
 <test name="Home Page">
+
     <classes>
         <class name="amazon.Retail"/>
     </classes>
 
 </test>
-
-
 
 </suite>
