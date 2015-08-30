@@ -14,8 +14,8 @@
 <test name="Home Page">
 
     <classes>
-        <!--<class name="amazon.Retail"/>-->
-        <class name="amazon.LogIn"/>
+        <class name="amazon.Retail"/>
+        <!--<class name="amazon.LogIn"/>-->
     </classes>
 
 </test>

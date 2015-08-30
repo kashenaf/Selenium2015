@@ -3,8 +3,8 @@
 <suite name="CNN App running on Firefox Browser">
 
 <parameter name="useSauceLab" value="false"/>
-<parameter name="userName" value="rahmanww"/>
-<parameter name="key" value="6f132866-de72-43fd-b49a-e6f81d26bfe3"/>
+<parameter name="userName" value="your user name"/>
+<parameter name="key" value="your access key"/>
 <parameter name="appUrl" value="http://www.cnn.com"/>
 <parameter name="os" value="Windows 8"/>
 <parameter name="browserName" value="firefox"/>
@@ -12,8 +12,8 @@
 
 <test name="Home Page">
     <classes>
-        <!--<class name="home.HomePage"/>-->
-        <!--<class name = "TechNewsContent"/>-->
+        <class name="home.HomePage"/>
+        <class name="TechNewsContent"/>
         <class name="Search"/>
     </classes>
 
