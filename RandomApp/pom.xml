@@ -28,7 +28,8 @@
                 <version>2.18.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>target/test-classes/CnnTestRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/W3SchoolTestRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/CharacterarcadeTestRunner.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
