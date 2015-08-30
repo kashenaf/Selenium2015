@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Ebay/Ebay.iml" filepath="$PROJECT_DIR$/Ebay/Ebay.iml" />
       <module fileurl="file://$PROJECT_DIR$/Facebook/Facebook.iml" filepath="$PROJECT_DIR$/Facebook/Facebook.iml" />
       <module fileurl="file://$PROJECT_DIR$/Generic/Generic.iml" filepath="$PROJECT_DIR$/Generic/Generic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RandomApp/RandomApp.iml" filepath="$PROJECT_DIR$/RandomApp/RandomApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpaceAutomationFramework.iml" filepath="$PROJECT_DIR$/SpaceAutomationFramework.iml" />
     </modules>
   </component>
