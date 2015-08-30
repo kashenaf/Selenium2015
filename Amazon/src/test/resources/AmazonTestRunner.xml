@@ -2,9 +2,9 @@
         <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Amazon App ri=unning on Firefox Browser">
 
-    <parameter name="useSauceLab" value="false"/>
-    <parameter name="userName" value="your user name"/>
-    <parameter name="key" value="your access key"/>
+    <parameter name="useSauceLab" value="true"/>
+    <parameter name="userName" value="rahmanww"/>
+    <parameter name="key" value="6f132866-de72-43fd-b49a-e6f81d26bfe3"/>
 <parameter name="appUrl" value="http://www.amazon.com"/>
     <parameter name="os" value="Windows 7"/>
     <parameter name="browserName" value="firefox"/>
