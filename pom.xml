@@ -15,6 +15,7 @@
         <module>Amazon</module>
         <module>Ebay</module>
         <module>Facebook</module>
+        <module>RandomApp</module>
     </modules>
 
     <dependencyManagement>
@@ -42,10 +43,49 @@
                <artifactId>poi</artifactId>
                <version>3.13-beta1</version>
            </dependency>
-
-
        </dependencies>
     </dependencyManagement>
 
+
+ <profiles>
+     <profile>
+       <id>all</id>
+         <modules>
+             <module>Generic</module>
+             <module>Cnn</module>
+             <module>Amazon</module>
+             <module>Ebay</module>
+             <module>Facebook</module>
+             <module>RandomApp</module>
+         </modules>
+         <activation>
+             <activeByDefault>true</activeByDefault>
+         </activation>
+     </profile>
+
+     <profile>
+        <id>CnnApp</id>
+        <modules>
+            <module>Generic</module>
+            <module>Cnn</module>
+        </modules>
+     </profile>
+
+     <profile>
+         <id>AmazonApp</id>
+         <modules>
+             <module>Generic</module>
+             <module>Amazon</module>
+         </modules>
+     </profile>
+
+     <profile>
+         <id>FacebookApp</id>
+         <modules>
+             <module>Generic</module>
+             <module>Facebook</module>
+         </modules>
+     </profile>
+ </profiles>
 
 </project>
